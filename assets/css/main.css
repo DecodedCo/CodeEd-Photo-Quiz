@@ -113,25 +113,59 @@ code.inline {
   color: #333;
 }
 
+.codeblock {
+  position: relative;
+}
+
 .codeblock-container {
   position: relative;
 }
 
-.codeblock-container[data-type]:after {
+.codeblock-container[data-type]:before {
   display: block;
   content: attr(data-type);
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-align: right;
   color: #aaa;
   position: absolute;
-  right: -45px;
-  bottom: 30px;
+  right: -75px;
+  bottom: 70px;
+  width: 100px;
+  height: 0;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.codeblock pre {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin: 0;
+  border-top-style: none;
+}
+
+.codeblock :first-child pre {
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-style: solid;
+}
+
+.codeblock :last-child pre {
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .example-button {

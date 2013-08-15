@@ -12,21 +12,29 @@ $(function() {
   });
 
   // Add "run" buttons to examples
-  $("pre[data-example]").each(function(i, el) {
+  $(".codeblock").each(function(i, el) {
     var $el = $(el),
-      n = $el.data("example"),
-      $button = $('<a class="btn btn-primary example-button" target="_blank" href="app/'+n+'/">Run &rarr;</a>'),
-      $container = $('<div class="codeblock-container"></div>'),
-      type = $el.attr("data-type");
+      n = $el.attr("data-example"),
+      $button = $('<a class="btn btn-primary example-button" target="_blank" href="app/'+n+'/">Run &rarr;</a>');
 
-    $el.before($container);
-    $el.appendTo($container);
+    $el.children().each(function(j, pre) {
+      var $pre = $(pre),
+        type = $pre.attr("data-type"),
+        $container = $('<div class="codeblock-container"></div>');
 
-    if (type !== undefined) {
-      $container.attr("data-type", type);
-    }
+      $pre.before($container);
+      $pre.appendTo($container);
 
-    $el.before($button);
+      if (type !== undefined) {
+        $container.attr("data-type", type);
+      }
+
+      if (j === 0) {
+        if (n !== "none") {
+          $pre.before($button);
+        }
+      }
+    });
   })
 });
 
