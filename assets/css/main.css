@@ -113,11 +113,15 @@ code.inline {
   color: #333;
 }
 
+.codeblock-container {
+  position: relative;
+}
+
 .example-button {
   position: absolute;
   z-index: 10;
-  right: 15px;
-  top: 6.5px;
+  right: 0;
+  top: 0;
   -webkit-border-top-left-radius: 0;
   -webkit-border-bottom-right-radius: 0;
   -moz-border-top-left-radius: 0;
@@ -156,12 +160,6 @@ pre[class*="language-"] {
 
 h1 span {
   font-weight: 300;
-}
-
-@media screen and (max-width: 767px) {
-  .example-button {
-    top: 0;
-  }
 }
 
 @media screen and (max-width: 470px) {

@@ -15,7 +15,11 @@ $(function() {
   $("pre[data-example]").each(function(i, el) {
     var $el = $(el),
       n = $el.data("example"),
-      $button = $('<a class="btn btn-primary example-button" target="_blank" href="app/'+n+'/">Run &rarr;</a>');
+      $button = $('<a class="btn btn-primary example-button" target="_blank" href="app/'+n+'/">Run &rarr;</a>'),
+      $container = $('<div class="codeblock-container"></div>');
+
+    $el.before($container);
+    $el.appendTo($container);
 
     $el.before($button);
   })
