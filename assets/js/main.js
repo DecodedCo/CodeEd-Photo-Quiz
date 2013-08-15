@@ -100,6 +100,16 @@ $(function() {
           env.attributes["data-hacktionary"] = "globalAttributes." + attr;
         }
       }
+    } else if (env.language === "css") {
+      if (env.type === "property") {
+        var prop = env.content.toLowerCase();
+
+        if (Hacktionary.cssProperties[prop] !== undefined) {
+          env.tag = "a";
+          env.attributes.href = "#";
+          env.attributes["data-hacktionary"] = "cssProperties." + prop;
+        }
+      }
     }
   });
 
