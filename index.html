@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CodeEd_Photo Quiz</title>
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body data-spy="scroll" data-target="#nav" data-offset="50">
+
+    <div class="container">
+
+      <nav class="navbar navbar-fixed-top" role="navigation" id="nav">
+        <div class="container">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://decoded.co/" class="navbar-brand"><span>CodeEd</span>_Photo Quiz</a>
+          <a href="https://decoded.co/" class="logo pull-right"><img src="assets/images/decoded-logo.png" alt="Decoded" height="30"></a>
+          <ul class="pull-left nav navbar-nav collapse navbar-collapse">
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#styles">Styles</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section id="intro" class="clearfix">
+        <div class="page-header col-sm-12"><h1>CodeEd<span>_Photo Quiz</span></h1></div>
+        <p class="lead col-sm-12">
+          Learn to build a simple photo quiz that will run on computers, tablets, and smartphones.
+        </p>
+
+        <div class="clearfix">
+          <div class="col-sm-6">
+            <p>
+              We will use core web technologies - HTML, CSS, and Javascript (you
+              should have a very basic familiarity with these) - with a few open
+              source libraries - <a href="http://jquery.com/">jQuery</a> and
+              <a href="http://getbootstrap.com/">Twitter Bootstrap</a> - plus
+              <a href="http://www.flickr.com/services/api/">flickr's API</a> for
+              fetching the photos for our quiz. Finally, we will save user scores
+              with <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Storage#sessionStorage">HTML5 localStorage</a>.
+            </p>
+          </div>
+
+          <div class="col-sm-6">
+            <h4 class="no-top">You/your students should have:</h4>
+            <ul>
+              <li>A basic understanding of HTML and CSS</li>
+              <li>A text editor</li>
+              <li>A modern browser - Firefox, Chrome, or Internet Explorer 9+ will all work.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="structure" class="clearfix">
+        <h2 class="col-sm-12">1: HTML Structure</h2>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Let's start off with an empty HTML document.
+            </p>
+            <p>
+              Create a file called <code>index.html</code> in your text editor,
+              and write a basic empty HTML document. You should be able to more or
+              less understand the example. There are a couple of extra
+              <code class="language-markup">&lt;meta&gt;</code> tags in there you might not recognize:
+            </p>
+            <ul>
+              <li>
+                <code class="language-markup inline">&lt;meta charset=&quot;utf-8&quot;&gt;</code>
+                lets us use special characters like á, ü, and 汉.
+              </li>
+              <li>
+                <code class="language-markup inline">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</code>
+                stops the browser using compatibility mode.
+              </li>
+              <li>
+                <code class="language-markup inline">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</code>
+                makes sure our app looks good on mobiles.
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <pre class="line-numbers" data-src="assets/examples/01/index.html" data-example="01"></pre>
+          </div>
+        </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Now, we need to start putting the pieces of our app in place.
+            </p>
+            <p>
+              Inside the <code class="language-markup inline">&lt;body&gt;</code>
+              tag, will need a couple of things - a <code class="language-markup inline">
+              &lt;header&gt;</code> for a title etc., and an <code class="language-markup inline">
+              &lt;ol&gt;</code> <strong>O</strong>rdered <strong>L</strong>ist
+              for our questions.
+            </p>
+            <p>
+              For now, the <code class="language-markup inline"> &lt;header&gt;</code>
+              can just contain a <code class="language-markup inline">&lt;h1&gt;</code>
+              for the title of our app. We'll add more stuff (like a score) later.
+            </p>
+            <p>
+              The <code class="language-markup inline">&lt;ol&gt;</code> needs
+              some <code class="language-markup inline">&lt;li&gt;</code>
+              <strong>L</strong>ist <strong>I</strong>tem tags. Each one will
+              contain a question and four images for answers. The question is in
+              a <code class="language-markup inline">&lt;p&gt;</code>, and each
+              of the possible answers is a <code class="language-markup inline">&lt;button&gt;</code>.
+            </p>
+            <p>
+              Each <code class="language-markup inline">&lt;button&gt;</code>
+              contains an <code class="language-markup inline">&lt;img&gt;</code> tag (an image).
+              The <code class="language-noop"><span class="token attr-name">src</span>=</code>
+              attribute is the location of the image on the web - its URL. For
+              now, we're just using a placeholder image:
+              <a href="http://placekitten.com/100/100">http://placekitten.com/100/100</a>.
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <pre class="line-numbers" data-src="assets/examples/02/body.html" data-example="02"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="styles">
+        <h2 class="col-sm-12">
+          Styling with Bootstrap
+        </h2>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              We can use Bootstrap to make our app look good fast.
+            </p>
+            <p>
+              Bootstrap is an open source library by Twitter. It's basically just
+              a load of CSS and Javascript that helps you get going with a web
+              project faster. Installing it is super easy: just paste this
+              snippet into your <code class="language-markup inline">&lt;head&gt;
+              </code> element: <code class="language-markup inline">&lt;link
+              href=&quot;http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css&quot;
+              rel=&quot;stylesheet&quot;&gt;</code>
+            </p>
+            <p>If this has worked, your page should now be using a different font.</p>
+          </div>
+
+          <div class="col-sm-6">
+            <pre class="line-numbers" data-src="assets/examples/03/head.html" data-example="03" data-line="6"></pre>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

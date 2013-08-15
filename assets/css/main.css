@@ -1,0 +1,151 @@
+body {
+  padding: 50px 0;
+}
+
+.navbar {
+  background: #FEF800;
+}
+
+.navbar .container {
+  padding: 0 15px;
+}
+
+.navbar .logo img {
+  margin: 10px 0;
+}
+
+.navbar-brand span {
+  font-weight: 600;
+}
+
+.navbar-brand {
+  color: #333;
+}
+
+.navbar-toggle {
+  border-color: rgba(0, 0, 0, 0.5);
+  margin-left: 15px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-toggle:hover, .navbar-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-nav > .active > a {
+  background-color: transparent;
+  margin-bottom: -3px;
+}
+
+.navbar-nav > .active {
+  border-bottom: 3px solid #333;
+}
+
+.navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.page-header {
+  border-color: #cccccc;
+}
+
+.two-up:before,
+.two-up:after {
+  display: table;
+  content: " ";
+}
+
+.two-up:after {
+  clear: both;
+}
+
+.two-up {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.two-up:last-child {
+  border-bottom: none;
+}
+
+.no-top {
+  margin-top: 0;
+}
+
+section > h2 {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 15px;
+}
+
+code.inline {
+  white-space: normal;
+}
+
+/* Fix problem with bootstrap making prism code blocks wrap */
+.line-numbers {
+  word-break: normal;
+  word-wrap: normal;
+}
+
+.btn-primary {
+  background-color: #FEF800;
+  color: #333;
+  border-color: #C2BD00;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #F2ED00;
+  border-color: #C7C200;
+  color: #333;
+}
+
+.example-button {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 6.5px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-top-left-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.line-highlight {
+  margin-top: 0;
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: block;
+}
+
+.line-highlight:before {
+  content: "";
+  display:none;
+
+}
+
+h1 span {
+  font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+  .example-button {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .navbar .logo {
+    display: none;
+  }
+}
