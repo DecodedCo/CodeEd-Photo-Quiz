@@ -117,17 +117,6 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-code[class*="language-"] a[href],
-pre[class*="language-"] a[href] {
-	cursor: help;
-	text-decoration: none;
-}
-
-code[class*="language-"] a[href]:hover,
-pre[class*="language-"] a[href]:hover {
-	cursor: help;
-	text-decoration: underline;
-}
 
 pre.line-numbers {
 position: relative;

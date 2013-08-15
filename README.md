@@ -10,6 +10,9 @@ Learn to build a simple photo quiz app. We will use:
 
 To Run:
 -------
+
+After you've cloned the repo, make sure you do `git submodule init` and `git submodule update` to fetch all the dependencies!
+
 You'll need a HTTP server. If you've got one, just point it in the direction of
 this folder. If not, do `sudo npm install -g serve` (assuming nodejs is installed),
 then `cd` into this directory, and run `serve`. Then, go to http://localhost:3000/.
