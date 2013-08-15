@@ -117,6 +117,23 @@ code.inline {
   position: relative;
 }
 
+.codeblock-container[data-type]:after {
+  display: block;
+  content: attr(data-type);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  position: absolute;
+  right: -45px;
+  bottom: 30px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .example-button {
   position: absolute;
   z-index: 10;

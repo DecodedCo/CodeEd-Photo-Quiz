@@ -16,10 +16,15 @@ $(function() {
     var $el = $(el),
       n = $el.data("example"),
       $button = $('<a class="btn btn-primary example-button" target="_blank" href="app/'+n+'/">Run &rarr;</a>'),
-      $container = $('<div class="codeblock-container"></div>');
+      $container = $('<div class="codeblock-container"></div>'),
+      type = $el.attr("data-type");
 
     $el.before($container);
     $el.appendTo($container);
+
+    if (type !== undefined) {
+      $container.attr("data-type", type);
+    }
 
     $el.before($button);
   })
