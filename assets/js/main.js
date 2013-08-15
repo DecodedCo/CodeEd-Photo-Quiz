@@ -2,6 +2,7 @@ $(function() {
   var offset = 40,
     $htmlbody = $("html, body");
 
+  // Scrolling navigation
   $(".navbar-nav > li > a").on("click", function(e) {
     e.preventDefault();
     var top = $(this.getAttribute("href")).offset().top - offset;
@@ -10,6 +11,7 @@ $(function() {
     })
   });
 
+  // Add "run" buttons to examples
   $("pre[data-example]").each(function(i, el) {
     var $el = $(el),
       n = $el.data("example"),
@@ -55,16 +57,36 @@ $(function() {
 
   Prism.hooks.add("wrap", function(env) {
     if (env.language === "markup") {
-      var el = Hacktionary.htmlElements[env.content.toLowerCase()] || false;
 
-      if (el !== false && el.desc !== undefined) {
-        env.tag = "a";
-        env.attributes.href = "#";
-        env.attributes["data-hacktionary"] = "htmlElements." + env.content.toLowerCase() + ".desc";
+      if (env.type === "tag-id") {
+        // Set up for HTML tag names
+        var el = Hacktionary.htmlElements[env.content.toLowerCase()] || false;
+
+        if (el !== false && el.desc !== undefined) {
+          env.tag = "a";
+          env.attributes.href = "#";
+          env.attributes["data-hacktionary"] = "htmlElements." + env.content.toLowerCase() + ".desc";
+        }
+      } else if (env.type === "attr-name") {
+        // Set up for HTML attributes
+        var attr = env.content.toLowerCase(),
+          el = env.parent[0].content[1].content.toLowerCase(),
+          elData = Hacktionary.htmlElements[el] || false;
+
+        if (elData !== false && elData.attrs[attr] !== undefined) {
+          env.tag = "a";
+          env.attributes.href = "#";
+          env.attributes["data-hacktionary"] = "htmlElements." + el + ".attrs." + attr;
+        } else if (Hacktionary.globalAttributes[attr] !== undefined) {
+          env.tag = "a";
+          env.attributes.href = "#";
+          env.attributes["data-hacktionary"] = "globalAttributes." + attr;
+        }
       }
     }
   });
 
+  // Showing/hiding the popovers
   $(document).on("click", "[data-hacktionary]", function(e) {
     e.preventDefault();
     var $el = $(this),

@@ -1,5 +1,22 @@
 var Hacktionary = {};
 
+Hacktionary.globalAttributes = {
+  "accesskey": "This attribute provides a hint for generating a keyboard shortcut for the current element. ",
+  "class": "This attribute is a space-separated list of the classes of the element. ",
+  "contenteditable": "  This enumerated attribute indicates if the element should be editable by the user. ",
+  "contextmenu": "This attribute is related to the new <a class=\"external\" href=\"http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html\" lang=\"en\" title=\"The definition of 'contextmenu' in that specification.\">WHATWG HTML Living Standard</a>.",
+  "dir": "This enumerated attribute indicates the directionality of the element's text. ",
+  "draggable": "  This enumerated attribute indicates whether the element can be dragged, using the <a href=\"https://developer.mozilla.org/en/DragDrop/Drag_and_Drop\" title=\"https://developer.mozilla.org/En/DragDrop/Drag_and_Drop\">Drag and Drop API</a>. ",
+  "hidden": "  This Boolean attribute indicates that the element is not yet, or is no longer, <em>relevant</em>. ",
+  "id": "This attribute defines a unique identifier (ID) which must be unique in the whole document. ",
+  "itemtype": " These attributes are related to the <a class=\"external\" href=\"http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata\" title=\"http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata\">HTML5 Microdata feature</a>. ",
+  "lang": "This attribute participates in defining the language of the element, the language that non-editable elements are written in or the language that editable elements should be written in. ",
+  "spellcheck": "  This enumerated attribute defines whether the element may be checked for spelling errors. ",
+  "style": "This attribute contains <a href=\"https://developer.mozilla.org/en/CSS\" title=\"https://developer.mozilla.org/en/CSS\">CSS</a> styling declarations to be applied to the element. ",
+  "tabindex": "This integer attribute indicates if the element can take input focus (is <em>focusable</em>), if it should participate to sequential keyboard navigation, and if so, at what position. ",
+  "title": "This attribute contains a text representing advisory information related to the element it belongs too. "
+};
+
 Hacktionary.htmlElements = {
   "a": {
     "desc": "The HTML Anchor Element (<code>&lt;a&gt;</code>) defines a hyperlink, the named target destination for a hyperlink, or both.",
