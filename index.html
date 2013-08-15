@@ -162,6 +162,58 @@
             <pre class="line-numbers" data-src="assets/examples/03-head.html" data-example="03" data-line="6"></pre>
           </div>
         </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">Bootstrap styles are applied using classes.</p>
+            <p>
+              First, the <code class="language-markup inline">&lt;header&gt;</code> tag. We want
+              this to be a bar fixed to the top of the screen. Bootstrap gives us a <a href="http://getbootstrap.com/components/#navbar">
+              navbar component</a> to do this, so we set
+              <code class="language-noop"><span class="token attr-name">class</span><span class="token attr-value"><span class="punctuation">=&quot;</span>navbar navbar-fixed-top<span class="punctuation">&quot;</span></span></code> on the element.
+            </p>
+            <p>
+              Next, the <code class="language-markup inline">&lt;ol&gt;</code> <strong>O</strong>rdered
+              <strong>L</strong>ist. This want to have all its list items in a row, so we use Bootstrap's
+              <a href="http://getbootstrap.com/css/#type-lists">list-inline</a>:
+              <code class="language-noop"><span class="token attr-name">class</span><span class="token attr-value"><span class="punctuation">=&quot;</span>list-inline<span class="punctuation">&quot;</span></span></code>
+            </p>
+            <p>
+              As for the individual buttons, we need to get Bootstrap to style them as such. The Bootstrap
+              website shows us that there are lots of <a href="http://getbootstrap.com/css/#buttons">
+              button options</a> to choose from. Each one needs class <code class="language-noop"><span class="token attr-value">btn</span></code>,
+              and you can choose from the options on the page (
+              <code class="language-noop"><span class="token attr-value">btn-primary</span></code>,
+              <code class="language-noop"><span class="token attr-value">btn-success</span></code>,
+              <code class="language-noop"><span class="token attr-value">btn-info</span></code>, etc.)
+              to change how the button looks. I used <code class="language-noop"><span class="token attr-value">btn-default</span></code>.
+            </p>
+            <div class="alert alert-info">
+              <strong>Note:</strong> you must include at least one of the <code class="language-noop"><span class="token attr-value">btn-...</span></code>
+              classes on each <code class="language-markup inline">&lt;button&gt;</code> element.
+            </div>
+            <p>
+              Initially, your page might look pretty weird, but don't worry: we'll fix that next.
+            </p>
+          </div>
+
+          <div class="col-sm-6">
+            <pre class="line-numbers" data-src="assets/examples/04-body.html" data-example="04"></pre>
+          </div>
+        </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Tweaking Bootstrap with custom CSS.
+            </p>
+          </div>
+
+          <div class="col-sm-6">
+            <h3>HTML:</h3>
+            <pre class="line-numbers" data-src="assets/examples/05-head.html" data-example="05"></pre>
+          </div>
+        </div>
       </section>
 
     </div>

@@ -4,7 +4,7 @@ $(function() {
 
   // Scrolling navigation
   $(".navbar-nav > li > a").on("click", function(e) {
-    e.preventDefault();
+    // e.preventDefault();
     var top = $(this.getAttribute("href")).offset().top - offset;
     $htmlbody.animate({
       scrollTop: top
