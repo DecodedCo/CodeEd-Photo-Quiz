@@ -103,7 +103,7 @@
             </p>
             <p>
               Inside the <code class="language-markup inline">&lt;body&gt;</code>
-              tag, will need a couple of things - a <code class="language-markup inline">
+              tag, we will need a couple of things - a <code class="language-markup inline">
               &lt;header&gt;</code> for a title etc., and an <code class="language-markup inline">
               &lt;ol&gt;</code> <strong>O</strong>rdered <strong>L</strong>ist
               for our questions.
@@ -138,7 +138,7 @@
 
       <section id="styles">
         <h2 class="col-sm-12">
-          Styling with Bootstrap
+          2: Styling with Bootstrap
         </h2>
 
         <div class="two-up">
@@ -208,12 +208,30 @@
               Tweaking Bootstrap with custom CSS.
             </p>
             <p>
-              At the moment, your page is probably looking a bit odd.
+              At the moment, your page is probably looking a bit odd. We need to tweak Bootstrap's default styles with some
+              custom CSS! Start off by making a file called <code>style.css</code> in the same folder
+              as your <code>index.html</code>.
+            </p>
+            <p>
+              Now, we need to include the file in our HTML. At the bottom of your <code class="language-markup inline">&lt;head&gt;</code>
+              tag, add a <code class="language-markup inline">&lt;link&gt;</code> tag to include your
+              css. Remember to include a <code class="language-noop"><span class="token attr-name">rel</span></code>
+              and a <code class="language-noop"><span class="token attr-name">href</span></code>!
+            </p>
+            <p>
+              Let's write come CSS. First, that top bar is way too big. That's because the <code class="language-markup inline">&lt;h1&gt;</code>
+              has margins above and below that make it take up more space than it needs. We can fix
+              that with <code class="language-css inline">margin: 0;</code>.
+            </p>
+            <p>
+              The top bar should be a more reasonable size now, but it's still covering our pictures.
+              We need to add some space before any of our content. To do this, we can simply set
+              <code class="language-css inline">padding-top: 70px;</code> on <code class="language-markup inline">&lt;body&gt;</code>.
             </p>
           </div>
 
           <div class="col-sm-6 codeblock" data-example="05">
-            <pre class="line-numbers" data-src="assets/examples/05-head.html" data-line="4" data-type="HTML"></pre>
+            <pre class="line-numbers" data-src="assets/examples/05-head.html" data-line="7" data-type="HTML"></pre>
             <pre class="line-numbers" data-src="assets/examples/05-style.css" data-type="CSS"></pre>
           </div>
         </div>
