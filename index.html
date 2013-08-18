@@ -111,12 +111,18 @@
             </p>
             <p>
               For now, the <code class="language-markup inline"> &lt;header&gt;</code>
-              can just contain a <code class="language-markup inline">&lt;h1&gt;</code>
+              can just contain a <code class="language-markup inline">&lt;div&gt;</code>
+              with a <code class="language-markup inline">&lt;h1&gt;</code> inside it
               for the title of our app. We'll add more stuff (like a score) later.
             </p>
+            <div class="alert alert-info">
+              <strong>Note:</strong> We're including a lot of <code class="language-markup inline">&lt;div&gt;</code>
+              tags here, because later on we'll use them for keeping our page nicely centered.
+            </div>
             <p>
               The <code class="language-markup inline">&lt;ol&gt;</code> needs
-              some <code class="language-markup inline">&lt;li&gt;</code>
+              to be wrapped in a <code class="language-markup inline">&lt;div&gt;</code>,
+              and should contain some <code class="language-markup inline">&lt;li&gt;</code>
               <strong>L</strong>ist <strong>I</strong>tem tags. Each one will
               contain a question and four images for answers. The question is in
               a <code class="language-markup inline">&lt;p&gt;</code>, and each
@@ -193,6 +199,10 @@
               <strong>Note:</strong> you must include at least one of the <code class="language-noop"><span class="token attr-value">btn-...</span></code>
               classes on each <code class="language-markup inline">&lt;button&gt;</code> element.
             </div>
+            <p>
+              Finally, the two <code class="language-markup inline">&lt;div&gt;</code> tags. We can use these to 
+              keep the contents of our page nicely centered using Bootstrap's <code class="language-noop"><span class="token attr-value">container</span></code> class.
+            </p>
             <p>
               Initially, your page might look pretty weird, but don't worry: we'll fix that next.
             </p>
