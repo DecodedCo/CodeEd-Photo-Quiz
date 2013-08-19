@@ -29,6 +29,7 @@
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#structure">Structure</a></li>
             <li><a href="#styles">Styles</a></li>
+            <li><a href="#interaction">Interaction</a></li>
           </ul>
         </div>
       </nav>
@@ -116,8 +117,9 @@
               for the title of our app. We'll add more stuff (like a score) later.
             </p>
             <div class="alert alert-info">
-              <strong>Note:</strong> We're including a lot of <code class="language-markup inline">&lt;div&gt;</code>
-              tags here, because later on we'll use them for keeping our page nicely centered.
+              <strong>Note:</strong> At the moment, those <code class="language-markup inline">&lt;div&gt;</code>
+              tags aren't actually doing anything. Later on though, we'll use them to 
+              keep our page nicely centered.
             </div>
             <p>
               The <code class="language-markup inline">&lt;ol&gt;</code> needs
@@ -143,7 +145,7 @@
         </div>
       </section>
 
-      <section id="styles">
+      <section id="styles" class="clearfix">
         <h2 class="col-sm-12">
           2: Styling with Bootstrap
         </h2>
@@ -162,7 +164,9 @@
               href=&quot;http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css&quot;
               rel=&quot;stylesheet&quot;&gt;</code>
             </p>
-            <p>If this has worked, your page should now be using a different font.</p>
+            <p>
+              If this has worked, your page should now be using a different font.
+            </p>
           </div>
 
           <div class="col-sm-6 codeblock" data-example="03">
@@ -248,6 +252,41 @@
         </div>
       </section>
 
+      <section id="interaction" class="clearfix">
+        <h2 class="col-sm-12">
+          Interaction
+        </h2>
+
+        <div class="twoup">
+          <div class="col-sm-6">
+            <p class="lead">
+              We can use jQuery to make adding interaction to our app easier.
+            </p>
+            <p>
+              First, we need to import jQuery into our app. Just like with bootstrap, this is super
+              easy. We just need to include one line of code at the end of our app's <code class="inline language-markup">&lt;body&gt;</code>:
+            </p>
+            <p>
+              <code class="language-markup inline">&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</code>
+            </p>
+            <p>
+              We also need to include our own Javascript file. Add a <code class="language-markup inline">&lt;script&gt;</code>
+              tag just after the one for jQuery, and create a file for it to point to called <code>quiz.js</code>.
+              Remember to add an <code class="language-noop inline"><span class="token attr-name">src</span></code> 
+              attribute!
+            </p>
+            <p>
+              For now, just copy the JS code shown into your <code>quiz.js</code> file. We'll go through and
+              explain in in a moment. Just check that when you load the page, a box pops up and says "Success!".
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="06">
+            <pre class="line-numbers" data-src="assets/examples/06-body.html" data-type="html" data-line="11,12"></pre>
+            <pre class="line-numbers" data-src="assets/examples/06-js.js" data-type="javascript"></pre>
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -255,6 +294,7 @@
     <script src="assets/js/prism.js"></script>
     <script src="assets/prism-hacktionary.js/hacktionary.js"></script>
     <script src="assets/prism-hacktionary.js/prism-hacktionary.js"></script>
+    <script src="assets/js/prism-line-highlight.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

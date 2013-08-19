@@ -29,6 +29,9 @@ $(function() {
         $container.attr("data-type", type);
       }
 
+      // Add IDs so we can link to specific lines:
+      $pre.attr("id", "ex-" + n + "-" + type)
+
       if (j === 0) {
         if (n !== "none") {
           $pre.before($button);
@@ -36,4 +39,22 @@ $(function() {
       }
     });
   })
+
+  $(".line-link").on("mouseover click", function(e) {
+    e.preventDefault();
+    
+    var href = $(this).attr("href").split(":"),
+      pre, lines;
+
+    if (href.length === 2) {
+      pre = $(href[0]);
+      lines = href[1];
+
+      // remove old highlights:
+      $(".temporary.line-highlight").remove()
+
+      // Add new ones:
+      Prism.highlightLines(pre[0], lines, "temporary ")
+    }
+  });
 });
