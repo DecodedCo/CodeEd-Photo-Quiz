@@ -7,10 +7,10 @@ function displayQuiz(questions) {
 
   for (var i = 0; i < questions.length; i++) {
     var el = $("<li></li>"),
-      question = questions[i].question,
+      q = questions[i].question,
       answer = questions[i].answer;
 
-    html = '<p>' + question + '</p>' +
+    html = '<p>' + q + '</p>' +
       '<button class="btn btn-default"><img src="' + answer + '"></button>';
 
     el.html(html);
