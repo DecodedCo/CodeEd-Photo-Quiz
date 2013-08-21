@@ -14,8 +14,10 @@ function loadPhotos(question, callback) {
     var photos = data.photos.photo;
 
     var urls = photos.map(function(photo) {
-      return 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server +
-        '/' + photo.id + '_' + photo.secret + '.jpg';
+      return {
+        url: 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg',
+        correct: false
+      }
     });
 
     callback(urls, question)
@@ -23,28 +25,37 @@ function loadPhotos(question, callback) {
 }
 
 function displayQuiz(questions) {
-
-  var questionList = $("ol");
+  var questionList = $("ol"),
+    template = Handlebars.compile($("#question").html());
 
   for (var i = 0; i < questions.length; i++) {
     loadPhotos(questions[i], function(photos, question) {
-      var el = $("<li></li>"),
-        q = question.question,
-        answer = question.answer;
+      var el = $("<li></li>");
 
-      photos.push(answer);
+      photos.push({
+        url: question.answer,
+        correct: true
+      });
 
-      var html = '<p>' + q + '</p>';
+      photos = shuffle(photos);
 
-      for (var j = 0; j < photos.length; j++) {
-        html += '<button class="btn btn-default"><img src="' + photos[j] + '"></button>'
+      var data = {
+        question: question.question,
+        images: photos
       }
 
-      el.html(html);
+      el.html(template(data));
 
       el.appendTo(questionList);
     });
   }
 }
+
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/array/shuffle [v1.0]
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
 $(document).on("ready", loadQuiz);

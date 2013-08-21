@@ -3,17 +3,29 @@ function loadQuiz() {
 }
 
 function displayQuiz(questions) {
-  var questionList = $("ol");
+  var questionList = $("ol"),
+    template = Handlebars.compile($("#question").html());
 
   for (var i = 0; i < questions.length; i++) {
-    var el = $("<li></li>"),
-      q = questions[i].question,
-      answer = questions[i].answer;
+    var el = $("<li></li>");
 
-    html = '<p>' + q + '</p>' +
-      '<button class="btn btn-default"><img src="' + answer + '"></button>';
+    var answer = questions[i].answer;
 
-    el.html(html);
+    var data = {
+      question: questions[i].question,
+      images: [
+        {
+          url: answer,
+          correct: true
+        },
+        {
+          url: answer,
+          correct: false
+        }
+      ]
+    }
+
+    el.html(template(data));
 
     el.appendTo(questionList);
   }

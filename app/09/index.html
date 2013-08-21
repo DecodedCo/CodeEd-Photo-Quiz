@@ -20,7 +20,19 @@
       </ol>
     </div>
 
+    <script type="text/html" id="question">
+      <p>{{question}}</p>
+      {{#each images}}
+        {{#if correct}}
+          <button class="btn btn-default correct"><img src="{{url}}"></button>
+        {{else}}
+          <button class="btn btn-default incorrect"><img src="{{url}}"></button>
+        {{/if}}
+      {{/each}}
+    </script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="handlebars.js"></script>
     <script src="quiz.js"></script>
   </body>
 </html>

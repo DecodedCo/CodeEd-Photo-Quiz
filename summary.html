@@ -97,9 +97,9 @@
           <a href="app/08/" class="example btn btn-primary">Example &rarr;</a>
           <p class="lead">Getting our questions into the document.</p>
           <ul>
-            <li>Construct a for loop that munges together a HTML string for each question and adds it to the ul</li>
-            <li>The sample questions can be removed now</li>
-            <li>Give the images in the buttons  max-width: 150px to get the size reasonable.</li>
+            <li>Include handlebars.js in the document. <a href="http://handlebarsjs.com/">handlebarsjs.com</a>.</li>
+            <li>Get rid of dummy questions. Move one into a script type=&quot;text/html&quot; tag, and add Handlebars bits for looping and conditionals</li>
+            <li>Compile the template in JS. Fill it with data, and add it to the DOM.</li>
           </ul>
         </li>
 
@@ -117,9 +117,9 @@
           <a href="app/10/" class="example btn btn-primary">Example &rarr;</a>
           <p class="lead">Loading photos from Flickr.</p>
           <ul>
-            <li>Modify the loadPhotos function so that it takes a callback, and passes it an array of URLs.</li>
-            <li>Modify the for loop to call display the questions in a callback.</li>
-            <li>Change the HTML strings (possibly using a new loop) to include the photos from the array.</li>
+            <li>Modify the loadPhotos function so that it takes a callback, and passes it an array of objects with &quot;url&quot; and &quot;correct&quot; properties.</li>
+            <li>Use this new data in the template.</li>
+            <li>Google for &quot;shuffle javascript array&quot;. Use the first result to randomise the answers.</li>
           </ul>
         </li>
       </ol>
