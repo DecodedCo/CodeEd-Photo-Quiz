@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Which of these is known as 'the first programmer'",
+    "answer": "http://upload.wikimedia.org/wikipedia/commons/0/0f/Ada_lovelace.jpg",
+    "theme": "19th Century Ladies"
+  },
+  {
+    "question": "Who invented a mechanical difference engine?",
+    "answer": "http://upload.wikimedia.org/wikipedia/commons/6/6b/Charles_Babbage_-_1860.jpg",
+    "theme": "19th century men"
+  },
+  {
+    "question": "Which of these is the Colossus computer?",
+    "answer": "http://upload.wikimedia.org/wikipedia/commons/3/36/ColossusRebuild_12.jpg",
+    "theme": "old mainframe computers"
+  }
+]
