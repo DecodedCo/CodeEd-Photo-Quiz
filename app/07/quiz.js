@@ -3,7 +3,7 @@ function loadQuiz() {
 }
 
 function displayQuiz(questions) {
-  console.log(questions);
+  for (var i = 0; i < questions.length;l )
 }
 
 $(document).on("ready", loadQuiz);
