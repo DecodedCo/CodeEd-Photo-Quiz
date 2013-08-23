@@ -1,6 +1,6 @@
 function loadQuiz() {
   // get the file questions.json, and call displayQuiz when done
-  $.get("questions.json", displayQuiz)
+  $.get("questions.json", displayQuiz);
 }
 
 function displayQuiz(questions) {

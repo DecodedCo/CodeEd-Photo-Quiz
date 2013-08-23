@@ -2,7 +2,7 @@ var key = "c554239eaca1fb2f2e89c2da0878e954";
 
 function loadQuiz() {
   // get the file questions.json, and call displayQuiz when done
-  $.get("questions.json", displayQuiz)
+  $.get("questions.json", displayQuiz);
 }
 
 function loadPhotos(question, callback) {
@@ -22,11 +22,11 @@ function loadPhotos(question, callback) {
       return {
         url: 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg',
         correct: false
-      }
+      };
     });
 
     // Let stuff know we're done
-    callback(urls, question)
+    callback(urls, question);
   })
 }
 
@@ -58,10 +58,10 @@ function displayQuiz(questions) {
       var data = {
         question: question.question,
         images: photos
-      }
+      };
 
       // Render the question with the template, and add it to the document
-      questionList.html(questionList.html() + template(data))
+      questionList.html(questionList.html() + template(data));
     });
   }
 
@@ -77,19 +77,19 @@ function displayQuiz(questions) {
     buttons.removeClass("selected");
 
     // Disable other buttons:
-    buttons.attr("disabled", "disabled")
+    buttons.attr("disabled", "disabled");
 
     // Make sure the clicked button isn't disabled
-    clicked.attr("disabled", null)
+    clicked.attr("disabled", null);
 
     // Select the clicked button
     clicked.addClass("selected");
 
     // Increment scores:
-    outof++
+    outof++;
 
     if (clicked.hasClass("correct")) {
-      score++
+      score++;
     }
 
     // Update score display:

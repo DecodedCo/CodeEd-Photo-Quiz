@@ -1,6 +1,6 @@
 function loadQuiz() {
   // get the file questions.json, and call displayQuiz when done
-  $.get("questions.json", displayQuiz)
+  $.get("questions.json", displayQuiz);
 }
 
 function displayQuiz(questions) {
@@ -27,10 +27,10 @@ function displayQuiz(questions) {
           correct: false
         }
       ]
-    }
+    };
 
     // Render the question with the template, and add it to the document
-    questionList.html(questionList.html() + template(data))
+    questionList.html(questionList.html() + template(data));
   }
 }
 

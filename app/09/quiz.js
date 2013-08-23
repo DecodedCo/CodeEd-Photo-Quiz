@@ -2,7 +2,7 @@ var key = "c554239eaca1fb2f2e89c2da0878e954";
 
 function loadQuiz() {
   // get the file questions.json, and call displayQuiz when done
-  $.get("questions.json", displayQuiz)
+  $.get("questions.json", displayQuiz);
 }
 
 function loadPhotos(question) {
@@ -26,7 +26,7 @@ function displayQuiz(questions) {
   var template = Handlebars.compile($("#question").html());
 
   for (var i = 0; i < questions.length; i++) {
-    loadPhotos(questions[i])
+    loadPhotos(questions[i]);
 
     var answer = questions[i].answer;
 
@@ -43,10 +43,10 @@ function displayQuiz(questions) {
           correct: false
         }
       ]
-    }
+    };
 
     // Render the question with the template, and add it to the document
-    questionList.html(questionList.html() + template(data))
+    questionList.html(questionList.html() + template(data));
   }
 }
 
