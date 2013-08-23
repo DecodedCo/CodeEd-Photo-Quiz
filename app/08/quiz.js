@@ -7,8 +7,6 @@ function displayQuiz(questions) {
     template = Handlebars.compile($("#question").html());
 
   for (var i = 0; i < questions.length; i++) {
-    var el = $("<li></li>");
-
     var answer = questions[i].answer;
 
     var data = {
@@ -25,9 +23,7 @@ function displayQuiz(questions) {
       ]
     }
 
-    el.html(template(data));
-
-    el.appendTo(questionList);
+    questionList.html(questionList.html() + template(data))
   }
 }
 

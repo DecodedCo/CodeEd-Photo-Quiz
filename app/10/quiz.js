@@ -30,7 +30,6 @@ function displayQuiz(questions) {
 
   for (var i = 0; i < questions.length; i++) {
     loadPhotos(questions[i], function(photos, question) {
-      var el = $("<li></li>");
 
       photos.push({
         url: question.answer,
@@ -44,9 +43,7 @@ function displayQuiz(questions) {
         images: photos
       }
 
-      el.html(template(data));
-
-      el.appendTo(questionList);
+      questionList.html(questionList.html() + template(data))
     });
   }
 }
