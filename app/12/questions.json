@@ -5,7 +5,7 @@
     "theme": "19th Century Lady"
   },
   {
-    "question": "Who invented a mechanical difference engine?",
+    "question": "Who invented the mechanical difference engine?",
     "answer": "http://upload.wikimedia.org/wikipedia/commons/6/6b/Charles_Babbage_-_1860.jpg",
     "theme": "19th century man"
   },
@@ -13,5 +13,20 @@
     "question": "Which of these is the Colossus computer?",
     "answer": "http://upload.wikimedia.org/wikipedia/commons/3/36/ColossusRebuild_12.jpg",
     "theme": "old mainframe computer"
+  },
+  {
+    "question": "Where was the world wide web invented?",
+    "answer": "http://2.bp.blogspot.com/-gFVAReBu2ng/T-Zul-QCVXI/AAAAAAAAGk4/cVe29eJ-cc0/s640/IMG_8643-594x446.jpg",
+    "theme": "office"
+  },
+  {
+    "question": "Where was the world wide web invented?",
+    "answer": "http://2.bp.blogspot.com/-gFVAReBu2ng/T-Zul-QCVXI/AAAAAAAAGk4/cVe29eJ-cc0/s640/IMG_8643-594x446.jpg",
+    "theme": "office"
+  },
+  {
+    "question": "Who developed the first compiler?",
+    "answer": "http://upload.wikimedia.org/wikipedia/commons/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg",
+    "theme": "office"
   }
 ]
