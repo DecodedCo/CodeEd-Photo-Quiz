@@ -10,6 +10,10 @@ button img {
   max-width: 150px;
 }
 
+li {
+  height: 530px;
+}
+
 .selected.correct {
   background-color: rgb(92, 184, 92);
 }

@@ -118,7 +118,7 @@
             </p>
             <div class="alert alert-info">
               <strong>Note:</strong> At the moment, those <code class="language-markup inline">&lt;div&gt;</code>
-              tags aren't actually doing anything. Later on though, we'll use them to 
+              tags aren't actually doing anything. Later on though, we'll use them to
               keep our page nicely centered.
             </div>
             <p>
@@ -204,7 +204,7 @@
               classes on each <code class="language-markup inline">&lt;button&gt;</code> element.
             </div>
             <p>
-              Finally, the two <code class="language-markup inline">&lt;div&gt;</code> tags. We can use these to 
+              Finally, the two <code class="language-markup inline">&lt;div&gt;</code> tags. We can use these to
               keep the contents of our page nicely centered using Bootstrap's <code class="language-noop"><span class="token attr-value">container</span></code> class.
             </p>
             <p>
@@ -272,7 +272,7 @@
             <p>
               We also need to include our own Javascript file. Add a <code class="language-markup inline">&lt;script&gt;</code>
               tag just after the one for jQuery, and create a file for it to point to called <code>quiz.js</code>.
-              Remember to add an <code class="language-noop inline"><span class="token attr-name">src</span></code> 
+              Remember to add an <code class="language-noop inline"><span class="token attr-name">src</span></code>
               attribute!
             </p>
             <p>
@@ -301,12 +301,12 @@
             <pre class="line-numbers language-javascript"><code>function loadQuiz() {</code></pre>
             <p>
               Here, we declare a <code class="language-javascript inline">function</code>. A function
-              is like a program within a program that we give a name to. In this case, we've called 
-              it <code class="language-javascript inline">loadQuiz</code>. Everything between the opening 
+              is like a program within a program that we give a name to. In this case, we've called
+              it <code class="language-javascript inline">loadQuiz</code>. Everything between the opening
               <code>{</code> and closing <code>}</code> is part of the function.
             </p>
             <p>
-              Functions let us reuse code. We can define a function once, and then reuse it as many 
+              Functions let us reuse code. We can define a function once, and then reuse it as many
               times as we like. They also can keep our code more organized, as they let us label sections
               of code as having specific purposes.
             </p>
@@ -324,7 +324,7 @@
             </p>
             <p>
               An argument is a bit of data that we give to a function to do something with. In this
-              case, it's a <code>String</code>. 
+              case, it's a <code>String</code>.
             </p>
             <div class="alert alert-info">
               A <code>String</code> is a programmer word for a piece of text. It must be surrounded by
@@ -356,12 +356,12 @@
               to manipulate.
             </p>
             <p>
-              <code class="language-javascript inline">document</code> is a special object that's given to 
+              <code class="language-javascript inline">document</code> is a special object that's given to
               us by the browser to use. It's a representation of the document - your HTML page.
             </p>
           </div>
           <div class="col-sm-6">
-            <pre class="language-javascript"><code>.on("ready", loadQuiz);</code></pre> 
+            <pre class="language-javascript"><code>.on("ready", loadQuiz);</code></pre>
             <p>
               This calls <code class="language-javascript inline">on</code>, which is a function <em>on</em>
               <code class="language-javascript inline">$(document)</code>. If something is a function on
@@ -373,7 +373,7 @@
             <p>
               The function itself is part of jQuery. It is used when we want to do something in response
               to an event. It takes two arguments: the name of the event,
-              <code class="language-javascript inline">"ready"</code>, and what to do when it happens, 
+              <code class="language-javascript inline">"ready"</code>, and what to do when it happens,
               which in this case is our <code class="language-javascript inline">loadQuiz</code> function.
               Notice that the function isn't called with () brackets, only its name is passed in.
             </p>
@@ -383,7 +383,7 @@
               being rotated into landscape mode.
             </div>
             <p>
-              So what does this actually do? Well, it waits until the page is fully loaded before executing 
+              So what does this actually do? Well, it waits until the page is fully loaded before executing
               our function. We do this because otherwise we may end up trying to manipulate parts of the
               page that the browser doesn't know about yet, which can lead to some weird errors.
             </p>
@@ -403,7 +403,7 @@
             <p>
               Now that we have jQuery and our Javascript file set up, we can start actually building our
               app. First though, we need our questions. We will store our questions in a file called
-              
+
             </p>
           </div>
         </div>
