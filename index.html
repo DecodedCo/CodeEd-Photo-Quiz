@@ -465,6 +465,45 @@
             <pre class="line-numbers" data-src="assets/examples/07-quiz.js" data-type="javascript"></pre>
           </div>
         </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Writing templates for our questions.
+            </p>
+            <p>
+              In order to efficiently and easily get our questions into the document, we can use a template engine. A
+              template engine takes normal looking HTML, and lets us automatically insert data and repeat parts of it.
+              We're going to use a template engine called <a href="http://handlebarsjs.com/">Handlebars.JS</a>. Download
+              it and add add it to your page with a script tag, as shown on
+              <a href="#ex-08-html:23" class="line-link">Line 23</a>.
+            </p>
+            <p>
+              Next we need to write the template. Copy one of your <code class="language-markup inline">&lt;li&gt;</code>
+              tags into a new <code class="language-markup inline">&lt;script&gt;</code> tag. Make sure the tag has a
+              <code class="language-noop"><span class="token attr-name">type</span><span class="token attr-value"><span class="punctuation">=&quot;</span>text/html<span class="punctuation">&quot;</span></span></code>
+              attribute, so the browser knows it isn't Javascript, and an
+              <code class="language-noop"><span class="token attr-name">id</span></code> attribute you can use to
+              identify it later.
+            </p>
+            <p>
+              Now, we need to turn our HTML into a Handlebars template. In Handlebars, things inside of
+              <code class="language-markup">{{ }}</code> double curly braces get replaced with data. Replace the question
+              with <code class="language-markup">{{question}}</code>. Handlebars can also help us write less HTML:
+              use <code class="language-markup">{{#each images}} ... {{/each}}</code> to output an image tag for
+              every single image we will give it.
+            </p>
+            <p>
+              Finally, we will use Handlebars logic to output a different image tag
+              depending on whether the image is the correct answer.
+              <code class="language-markup">{{#if correct}} ... {{else}} ... {{/if}}</code> will output the stuff before the
+              <code class="language-markup">{{else}}</code> if <code>correct</code> is true, and the stuff after if not.
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="08">
+            <pre class="line-numbers" data-src="assets/examples/08-body.html" data-type="html"></pre>
+          </div>
+        </div>
       </section>
     </div>
 
