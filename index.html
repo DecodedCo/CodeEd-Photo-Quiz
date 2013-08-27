@@ -185,7 +185,7 @@
             </p>
             <p>
               Next, the <code class="language-markup inline">&lt;ol&gt;</code> <strong>O</strong>rdered
-              <strong>L</strong>ist. This want to have all its list items in a row, so we use Bootstrap's
+              <strong>L</strong>ist. This wants to have all its list items in a row, so we use Bootstrap's
               <a href="http://getbootstrap.com/css/#type-lists">list-inline</a>:
               <code class="language-noop"><span class="token attr-name">class</span><span class="token attr-value"><span class="punctuation">=&quot;</span>list-inline<span class="punctuation">&quot;</span></span></code>
             </p>
@@ -204,8 +204,10 @@
               classes on each <code class="language-markup inline">&lt;button&gt;</code> element.
             </div>
             <p>
-              Finally, the two <code class="language-markup inline">&lt;div&gt;</code> tags. We can use these to
-              keep the contents of our page nicely centered using Bootstrap's <code class="language-noop"><span class="token attr-value">container</span></code> class.
+              Finally, layout. The two <code class="language-markup inline">&lt;div&gt;</code> tags can be kept centered with a <code class="language-noop"><span class="token attr-value">container</span></code> class. The
+              <code class="language-markup inline">&lt;li&gt;</code> tags can be made to look good on all devices with
+              Bootstrap's responsive grid system. You can read more about it <a href="TODO">in the docs</a>, but I found
+              the best combination was <code class="language-noop">&quot;<span class="token attr-value">col-xs-12 col-sm-12 col-md-6 col-lg-4</span>&quot;</code>.
             </p>
             <p>
               Initially, your page might look pretty weird, but don't worry: we'll fix that next.
@@ -398,13 +400,38 @@
         <div class="two-up">
           <div class="col-sm-6">
             <p class="lead">
-              Storing our questions
+              Storing and retrieving our questions.
             </p>
             <p>
               Now that we have jQuery and our Javascript file set up, we can start actually building our
-              app. First though, we need our questions. We will store our questions in a file called
-
+              app. First though, we need our questions. We will store our questions using a format called JSON - JavaScript
+              Object Notation. JSON is a way of storing data to be read by computers, whilst still being easy for
+              people to understand too.
             </p>
+            <p>
+              Create a file called <code>questions.json</code>. Our JSON is a list, so everything goes inside <code>[ ]</code>
+              square brackets. Then, each question is inside <code>{ }</code> curly braces, and separated with commas.
+              JSON looks kind of like CSS: there's a property name (key), a colon, and then a value:
+              <code class="language-javascript inline">{ "key": "value" }</code>. Give each question 3 properties:
+              <code>question</code>, the question you're asking; <code>answer</code>, the URL to the answer image; and
+              <code>theme</code>, a term to search Flickr for to get the other (incorrect) answers.
+            </p>
+            <p>
+              Now, we need to load that data. Modify your Javascript file to use jQuery's
+              <code class="language-javascript inline">$.get(...)</code> to <em>get</em> the questions. The first argument is
+              the file we're getting, and the second is what we want to do when we've got it. In this case, we're using a
+              function called <code>displayQuiz</code>. This function takes one argument (the questions) and logs it to the
+              console so we can look at it.
+            </p>
+            <div class="alert alert-info">
+              <strong>The console is super useful.</strong> You can use
+              <code class="language-javascript inline">console.log</code> anywhere in your Javascript code to check the value of a
+              variable. To access the console, right click on the page; choose 'Inspect Element', and then click 'Console'.
+            </div>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="07">
+            <pre class="line-numbers" data-src="assets/examples/07-questions.js" data-type="json"></pre>
+            <pre class="line-numbers" data-src="assets/examples/07-quiz.js" data-type="javascript"></pre>
           </div>
         </div>
       </section>
