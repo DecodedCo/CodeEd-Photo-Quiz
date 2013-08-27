@@ -179,8 +179,8 @@
             <p class="lead">Bootstrap styles are applied using classes.</p>
             <p>
               First, the <code class="language-markup inline">&lt;header&gt;</code> tag. We want
-              this to be a bar fixed to the top of the screen. Bootstrap gives us a <a href="http://getbootstrap.com/components/#navbar">
-              navbar component</a> to do this, so we set
+              this to be a bar fixed to the top of the screen. Bootstrap gives us a
+              <a href="http://getbootstrap.com/components/#navbar"> navbar component</a> to do this, so we set
               <code class="language-noop"><span class="token attr-name">class</span><span class="token attr-value"><span class="punctuation">=&quot;</span>navbar navbar-default navbar-fixed-top<span class="punctuation">&quot;</span></span></code> on the element.
             </p>
             <p>
@@ -192,19 +192,23 @@
             <p>
               As for the individual buttons, we need to get Bootstrap to style them as such. The Bootstrap
               website shows us that there are lots of <a href="http://getbootstrap.com/css/#buttons">
-              button options</a> to choose from. Each one needs class <code class="language-noop"><span class="token attr-value">btn</span></code>,
+              button options</a> to choose from. Each one needs class
+              <code class="language-noop"><span class="token attr-value">btn</span></code>,
               and you can choose from the options on the page (
               <code class="language-noop"><span class="token attr-value">btn-primary</span></code>,
               <code class="language-noop"><span class="token attr-value">btn-success</span></code>,
               <code class="language-noop"><span class="token attr-value">btn-info</span></code>, etc.)
-              to change how the button looks. I used <code class="language-noop"><span class="token attr-value">btn-default</span></code>.
+              to change how the button looks. I used
+              <code class="language-noop"><span class="token attr-value">btn-default</span></code>.
             </p>
             <div class="alert alert-info">
-              <strong>Note:</strong> you must include at least one of the <code class="language-noop"><span class="token attr-value">btn-...</span></code>
+              <strong>Note:</strong> you must include at least one of the
+              <code class="language-noop"><span class="token attr-value">btn-...</span></code>
               classes on each <code class="language-markup inline">&lt;button&gt;</code> element.
             </div>
             <p>
-              Finally, layout. The two <code class="language-markup inline">&lt;div&gt;</code> tags can be kept centered with a <code class="language-noop"><span class="token attr-value">container</span></code> class. The
+              Finally, layout. The two <code class="language-markup inline">&lt;div&gt;</code> tags can be kept centered
+              with a <code class="language-noop"><span class="token attr-value">container</span></code> class. The
               <code class="language-markup inline">&lt;li&gt;</code> tags can be made to look good on all devices with
               Bootstrap's responsive grid system. You can read more about it <a href="TODO">in the docs</a>, but I found
               the best combination was <code class="language-noop">&quot;<span class="token attr-value">col-xs-12 col-sm-12 col-md-6 col-lg-4</span>&quot;</code>.
@@ -230,20 +234,22 @@
               as your <code>index.html</code>.
             </p>
             <p>
-              Now, we need to include the file in our HTML. At the bottom of your <code class="language-markup inline">&lt;head&gt;</code>
-              tag, add a <code class="language-markup inline">&lt;link&gt;</code> tag to include your
-              css. Remember to include a <code class="language-noop"><span class="token attr-name">rel</span></code>
-              and a <code class="language-noop"><span class="token attr-name">href</span></code>!
+              Now, we need to include the file in our HTML. At the bottom of your
+              <code class="language-markup inline">&lt;head&gt;</code> tag, add a
+              <code class="language-markup inline">&lt;link&gt;</code> tag to include your css. Remember to include a
+              <code class="language-noop"><span class="token attr-name">rel</span></code> and a
+              <code class="language-noop"><span class="token attr-name">href</span></code>!
             </p>
             <p>
-              Let's write some CSS. First, that top bar is way too big. That's because the <code class="language-markup inline">&lt;h1&gt;</code>
-              has margins above and below that make it take up more space than it needs. We can fix
-              that with <code class="language-css inline">margin: 0;</code>.
+              Let's write some CSS. First, that top bar is way too big. That's because the
+              <code class="language-markup inline">&lt;h1&gt;</code> has margins above and below that make it take up
+              more space than it needs. We can fix that with <code class="language-css inline">margin: 0;</code>.
             </p>
             <p>
               The top bar should be a more reasonable size now, but it's still covering our pictures.
               We need to add some space before any of our content. To do this, we can simply set
-              <code class="language-css inline">padding-top: 70px;</code> on <code class="language-markup inline">&lt;body&gt;</code>.
+              <code class="language-css inline">padding-top: 70px;</code> on
+              <code class="language-markup inline">&lt;body&gt;</code>.
             </p>
           </div>
 
@@ -266,7 +272,8 @@
             </p>
             <p>
               First, we need to import jQuery into our app. Just like with bootstrap, this is super
-              easy. We just need to include one line of code at the end of our app's <code class="inline language-markup">&lt;body&gt;</code>:
+              easy. We just need to include one line of code at the end of our app's
+              <code class="inline language-markup">&lt;body&gt;</code>:
             </p>
             <p>
               <code class="language-markup inline">&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</code>
@@ -296,104 +303,128 @@
             <p>
               Javascript is something called a <em>procedural</em> language. This means that it starts
               at the top of your file and reads downwards, running each instruction as it comes to it.
-              We're going to follow the code in the same way, running through top-to-bottom, line-by-line.
+              Click on the lines of code below for a detailed explanation of what each does.
             </p>
-          </div>
-          <div class="col-sm-6">
-            <pre class="line-numbers language-javascript"><code>function loadQuiz() {</code></pre>
-            <p>
-              Here, we declare a <code class="language-javascript inline">function</code>. A function
-              is like a program within a program that we give a name to. In this case, we've called
-              it <code class="language-javascript inline">loadQuiz</code>. Everything between the opening
-              <code>{</code> and closing <code>}</code> is part of the function.
-            </p>
-            <p>
-              Functions let us reuse code. We can define a function once, and then reuse it as many
-              times as we like. They also can keep our code more organized, as they let us label sections
-              of code as having specific purposes.
-            </p>
-            <div class="alert alert-info">
-              <strong>Note:</strong> none of the instructions inside the function will be run just yet.
-              We'd have to call the function first, which looks like this: <code class="language-javascript inline">loadQuiz();</code>
+            <div class="panel-group" id="code-06-explain">
+              <div class="panel panel-default">
+                <a href="#exp-06-line-1" class="accordon-toggle" data-toggle="collapse" data-parent="#code-06-explain">
+                  <pre class="line-numbers language-javascript"><code>function loadQuiz() {</code></pre>
+                </a>
+                <div class="collapse panel-collapse" id="exp-06-line-1">
+                  <div class="panel-body">
+                    <p>
+                      Here, we declare a <code class="language-javascript inline">function</code>. A function
+                      is like a program within a program that we give a name to. In this case, we've called
+                      it <code class="language-javascript inline">loadQuiz</code>. Everything between the opening
+                      <code>{</code> and closing <code>}</code> is part of the function.
+                    </p>
+                    <p>
+                      Functions let us reuse code. We can define a function once, and then reuse it as many
+                      times as we like. They also can keep our code more organized, as they let us label sections
+                      of code as having specific purposes.
+                    </p>
+                    <div class="alert alert-info">
+                      <strong>Note:</strong> none of the instructions inside the function will be run just yet.
+                      We'd have to call the function first, which looks like this:
+                      <code class="language-javascript inline">loadQuiz();</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <a href="#exp-06-line-2" class="accordon-toggle" data-toggle="collapse" data-parent="#code-06-explain">
+                  <pre class="line-numbers language-javascript" data-start="2"><code>  alert("Success!");</code></pre>
+                </a>
+                <div class="collapse panel-collapse" id="exp-06-line-2">
+                  <div class="panel-body">
+                    <p>
+                      On line 2, we call a function. The function is called <code class="language-javascript inline">alert</code>,
+                      which is build in to your browser. It takes one argument, and pops up a box containing the
+                      argument.
+                    </p>
+                    <p>
+                      An argument is a bit of data that we give to a function to do something with. In this
+                      case, it's a <code>String</code>.
+                    </p>
+                    <div class="alert alert-info">
+                      A <code>String</code> is a programmer word for a piece of text. It must be surrounded by
+                      quotation marks.
+                    </div>
+                    <p>
+                      Try changing the text inside the quotes, before saving and reloading the page. What if
+                      you remove the quotes, and write <code class="language-javascript inline">5 + 8</code>?
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <a href="#exp-06-line-3" class="accordon-toggle" data-toggle="collapse" data-parent="#code-06-explain">
+                  <pre class="line-numbers language-javascript" data-start="3"><code>}</code></pre>
+                </a>
+                <div class="collapse panel-collapse" id="exp-06-line-3">
+                  <div class="panel-body">
+                    <p>
+                      This signals the end of our function definition. Any instruction we find now will be run
+                      straight away (unless we ask for them not to be).
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <a href="#exp-06-line-5" class="accordon-toggle" data-toggle="collapse" data-parent="#code-06-explain">
+                  <pre class="line-numbers language-javascript" data-start="5"><code>$(document).on("ready", loadQuiz);</code></pre>
+                </a>
+                <div class="collapse panel-collapse" id="exp-06-line-5">
+                  <div class="panel-body">
+                    <p>
+                      This is the most complicated line of code in our example. We'll deal with it in two parts.
+                    </p>
+                    <pre class="language-javascript"><code>$(document)</code></pre>
+                    <p>
+                      This calls a function named <code class="language-javascript inline">$</code>, with one argument,
+                      <code class="language-javacript inline">document</code>. <code class="language-javascript inline">$</code>
+                      is the jQuery function: it turns its argument into a jQuery object, which makes it easier for us
+                      to manipulate.
+                    </p>
+                    <p>
+                      <code class="language-javascript inline">document</code> is a special object that's given to
+                      us by the browser to use. It's a representation of the document - your HTML page.
+                    </p>
+                    <pre class="language-javascript"><code>.on("ready", loadQuiz);</code></pre>
+                    <p>
+                      This calls <code class="language-javascript inline">on</code>, which is a function <em>on</em>
+                      <code class="language-javascript inline">$(document)</code>. If something is a function on
+                      something else, it means that it's an instruction for that specific object. For example,
+                      you might program a robot by writing <code class="language-javascript inline">robot.moveForward()</code>:
+                      the <code class="language-javascript inline">robot</code> part addresses the robot, then
+                      <code class="language-javascript inline">moveForward()</code> gives it an instruction.
+                    </p>
+                    <p>
+                      The function itself is part of jQuery. It is used when we want to do something in response
+                      to an event. It takes two arguments: the name of the event,
+                      <code class="language-javascript inline">"ready"</code>, and what to do when it happens,
+                      which in this case is our <code class="language-javascript inline">loadQuiz</code> function.
+                      Notice that the function isn't called with () brackets, only its name is passed in.
+                    </p>
+                    <div class="alert alert-info">
+                      <strong>Note:</strong> an "event" is something that happens. For example, it may be the page loading,
+                      or it may be something on the page being clicked, or it may be the device the page is shown on
+                      being rotated into landscape mode.
+                    </div>
+                    <p>
+                      So what does this actually do? Well, it waits until the page is fully loaded before executing
+                      our function. We do this because otherwise we may end up trying to manipulate parts of the
+                      page that the browser doesn't know about yet, which can lead to some weird errors.
+                    </p>
+                    <p>
+                      Over all, this line basically says "When the document is ready, call the function loadQuiz".
+                      What would happen if you changed <code class="language-javascript inline">"ready"</code>
+                      to <code class="language-javascript inline">"click"</code>?
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <pre class="line-numbers language-javascript" data-start="2"><code>  alert("Success!");</code></pre>
-            <p>
-              On line 2, we call a function. The function is called <code class="language-javascript inline">alert</code>,
-              which is build in to your browser. It takes one argument, and pops up a box containing the
-              argument.
-            </p>
-            <p>
-              An argument is a bit of data that we give to a function to do something with. In this
-              case, it's a <code>String</code>.
-            </p>
-            <div class="alert alert-info">
-              A <code>String</code> is a programmer word for a piece of text. It must be surrounded by
-              quotation marks.
-            </div>
-            <p>
-              Try changing the text inside the quotes, before saving and reloading the page. What if
-              you remove the quotes, and write <code class="language-javascript inline">5 + 8</code>?
-            </p>
-          </div>
-        </div>
-        <div class="two-up">
-          <div class="col-sm-6">
-            <pre class="line-numbers language-javascript" data-start="3"><code>}</code></pre>
-            <p>
-              This signals the end of our function definition. Any instruction we find now will be run
-              straight away (unless we ask for them not to be).
-            </p>
-            <hr>
-            <pre class="line-numbers language-javascript" data-start="5"><code>$(document).on("ready", loadQuiz);</code></pre>
-            <p>
-              This is the most complicated line of code in our example. We'll deal with it in two parts.
-            </p>
-            <pre class="language-javascript"><code>$(document)</code></pre>
-            <p>
-              This calls a function named <code class="language-javascript inline">$</code>, with one argument,
-              <code class="language-javacript inline">document</code>. <code class="language-javascript inline">$</code>
-              is the jQuery function: it turns its argument into a jQuery object, which makes it easier for us
-              to manipulate.
-            </p>
-            <p>
-              <code class="language-javascript inline">document</code> is a special object that's given to
-              us by the browser to use. It's a representation of the document - your HTML page.
-            </p>
-          </div>
-          <div class="col-sm-6">
-            <pre class="language-javascript"><code>.on("ready", loadQuiz);</code></pre>
-            <p>
-              This calls <code class="language-javascript inline">on</code>, which is a function <em>on</em>
-              <code class="language-javascript inline">$(document)</code>. If something is a function on
-              something else, it means that it's an instruction for that specific object. For example,
-              you might program a robot by writing <code class="language-javascript inline">robot.moveForward()</code>:
-              the <code class="language-javascript inline">robot</code> part addresses the robot, then
-              <code class="language-javascript inline">moveForward()</code> gives it an instruction.
-            </p>
-            <p>
-              The function itself is part of jQuery. It is used when we want to do something in response
-              to an event. It takes two arguments: the name of the event,
-              <code class="language-javascript inline">"ready"</code>, and what to do when it happens,
-              which in this case is our <code class="language-javascript inline">loadQuiz</code> function.
-              Notice that the function isn't called with () brackets, only its name is passed in.
-            </p>
-            <div class="alert alert-info">
-              <strong>Note:</strong> an "event" is something that happens. For example, it may be the page loading,
-              or it may be something on the page being clicked, or it may be the device the page is shown on
-              being rotated into landscape mode.
-            </div>
-            <p>
-              So what does this actually do? Well, it waits until the page is fully loaded before executing
-              our function. We do this because otherwise we may end up trying to manipulate parts of the
-              page that the browser doesn't know about yet, which can lead to some weird errors.
-            </p>
-            <p>
-              Over all, this line basically says "When the document is ready, call the function loadQuiz".
-              What would happen if you changed <code class="language-javascript inline">"ready"</code>
-              to <code class="language-javascript inline">"click"</code>?
-            </p>
           </div>
         </div>
 
@@ -425,8 +456,8 @@
             </p>
             <div class="alert alert-info">
               <strong>The console is super useful.</strong> You can use
-              <code class="language-javascript inline">console.log</code> anywhere in your Javascript code to check the value of a
-              variable. To access the console, right click on the page; choose 'Inspect Element', and then click 'Console'.
+              <code class="language-javascript inline">console.log</code> anywhere in your Javascript code to check the value
+              of a variable. To access the console, right click on the page; choose 'Inspect Element', and then click 'Console'.
             </div>
           </div>
           <div class="col-sm-6 codeblock" data-example="07">
