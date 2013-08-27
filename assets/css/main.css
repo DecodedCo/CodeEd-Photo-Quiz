@@ -39,17 +39,23 @@ body {
   border: none;
 }
 
+.navbar-nav a {
+  color: #666;
+}
+
 .navbar-nav > .active > a {
   background-color: transparent;
   margin-bottom: -3px;
+  color: #333;
 }
 
 .navbar-nav > .active {
   border-bottom: 3px solid #333;
 }
 
-.navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
   background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
 }
 
 .alert-info {
