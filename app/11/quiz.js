@@ -64,7 +64,7 @@ function displayQuiz(questions) {
   // When a button is clicked...
   $(document).on("click", "button", function(e) {
     // find the clicked button
-    var clicked = $(e.target);
+    var clicked = $(this);
 
     // find other buttons in the same question
     var buttons = clicked.parent().find("button");
