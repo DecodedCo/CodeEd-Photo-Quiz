@@ -29,7 +29,7 @@
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#structure">Structure</a></li>
             <li><a href="#styles">Styles</a></li>
-            <li><a href="#loadingdata">Loading Data</a></li>
+            <li><a href="#questions">Loading Questions</a></li>
           </ul>
         </div>
       </nav>
@@ -65,7 +65,7 @@
       </section>
 
       <section id="structure" class="clearfix">
-        <h2 class="col-sm-12">1: HTML Structure</h2>
+        <h2 class="col-sm-12">HTML Structure</h2>
 
         <div class="two-up">
           <div class="col-sm-6">
@@ -147,7 +147,7 @@
 
       <section id="styles" class="clearfix">
         <h2 class="col-sm-12">
-          2: Styling with Bootstrap
+          Styling with Bootstrap
         </h2>
 
         <div class="two-up">
@@ -260,9 +260,9 @@
         </div>
       </section>
 
-      <section id="loadingdata" class="clearfix">
+      <section id="questions" class="clearfix">
         <h2 class="col-sm-12">
-          Loading Data
+          Loading Questions
         </h2>
 
         <div class="two-up">
@@ -504,10 +504,57 @@
             <pre class="line-numbers" data-src="assets/examples/08-body.html" data-type="html"></pre>
           </div>
         </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Getting data into our templates.
+            </p>
+            <p>
+              In order to get the data from our JSON into our template and onto the page, we need to modify our Javascript,
+              specifically our <code class="language-javascript inline">displayQuiz</code> function.
+            </p>
+            <p>
+              First we get the <code class="language-markup inline">&lt;ol&gt;</code> element to put our questions
+              (<a href="#ex-08-javascript:3" class="line-link">on line 3</a>) and prepare the template
+              (<a href="#ex-08-javascript:6" class="line-link">on line 6</a>). On
+              <a href="#ex-08-javascript:9" class="line-link"> line 9</a> we have a for loop. The contents of this is run
+              once for every question in our list. E.G. if you have 6 question in your JSON, it will get run 6 times.
+            </p>
+            <p>
+              The first thing we do in the loop is pull the answer out from the current question. Then, we make a Javascript
+              object for our template: the <a href="#ex-08-javascript:14" class="line-link">question</a> property for
+              <code class="language-markup inline">{{questions}}</code>, and the
+              <a href="#ex-08-javascript:15" class="line-link">images</a> property, a list of objects. Each of those objects
+              has two properties: <a href="#ex-08-javascript:17,21" class="line-link">url</a>, which points to the image we
+              want, and <a href="#ex-08-javascript:18,22" class="line-link">correct</a>, which tells us whether this answer
+              is the right one. We're just using the correct answer a couple of times as we don't have our Flickr data yet,
+              but you should remember all of these properties from your template.
+            </p>
+            <div class="alert alert-info">
+              <strong>Note:</strong> when we use
+              <a href="#ex-08-javascript:10,14" class="line-link"><code class="language-markup inline">questions[i]</code></a>,
+              it's like saying &quot;the <code>i</code>th value of <code class="language-markup inline">questions</code>&quot;.
+              It starts counting from 0 though, so when i is 0, it will get the first question, when it's 1 it will get the
+              second, and so on.
+            </div>
+            <p>
+              Finally, on <a href="#ex-08-javascript:28" class="line-link">Line 28</a>, we combine our data and template, and
+              add the result to the HTML in our <code class="language-markup inline">&lt;ol&gt;</code> element.
+            </p>
+            <p>
+              When you test this, you should see two of your answer images for each question. Right click on the buttons and
+              select &quot;inspect element&quot; to check that the classes have all been applied properly.
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="08">
+            <pre class="line-numbers" data-src="assets/examples/08-js.js" data-type="javascript"></pre>
+          </div>
+        </div>
       </section>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/prism.js"></script>
     <script src="assets/prism-hacktionary.js/hacktionary.js"></script>
