@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/prism-hacktionary.js/prism-hacktionary.css">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
-  <body data-spy="scroll" data-target="#nav" data-offset="50">
+  <body data-spy="scroll" data-target="#nav">
 
     <div class="container">
 
@@ -31,6 +31,7 @@
             <li><a href="#styles">Styles</a></li>
             <li><a href="#questions">Loading Questions</a></li>
             <li><a href="#flickr">Flickr API</a></li>
+            <li><a href="#interaction">Interaction</a></li>
           </ul>
         </div>
       </nav>
@@ -652,6 +653,47 @@
           </div>
           <div class="col-sm-6 codeblock" data-example="10">
             <pre class="line-numbers" data-src="assets/examples/10-js.js" data-type="javascript"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="interaction" class="clearfix">
+        <h2 class="col-sm-12">Interaction</h2>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Answering questions
+            </p>
+            <p>
+              Now we have the questions and images on the page, we need to be able to answer them. At the bottom of your
+              <code class="language-javascript inline">displayQuiz</code> function, add a jQuery 'click' event listener to the
+              document. Rather than just an event name and callback, like our <code class="language-javascript inline">ready</code>
+              event, we will add a third argument to make sure that the event is triggered only for clicks on buttons.
+            </p>
+            <p>
+              Inside the event handler function, we need to first find the clicked button, then all the other buttons. Once
+              we have that, we need to make sure that none of the buttons have class <code>selected</code>, before adding the
+              class to the clicked button. This way, only one button (the most recently clicked) per question ever has
+              class selected.
+            </p>
+            <p>
+              That won't appear to do anything on it's own. We need to indicate to our user whether we've selected a correct
+              or incorrect button. To do this, we will use css. Write two new CSS selectors, one for selected correct answers,
+              and one for selected incorrect answers. Use whatever rules you like here to indicate correct or incorrect -
+              I just used <code class="language-noop inline"><span class="token property">background-color</span></code> to
+              make correct answers green and incorrect answers red.
+            </p>
+            <p>
+              Whilst we're editing you CSS, we can make another change: If you're questions are being laid out if a weird way,
+              set the <code class="language-noop inline"><span class="token property">height</span></code> property on
+              <code class="language-noop inline"><span class="token selector">li</span></code> to something larger than the
+              height of the images in your questions.
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="11">
+            <pre class="line-numbers" data-src="assets/examples/11-js.js" data-type="javascript"></pre>
+            <pre class="line-numbers" data-src="assets/examples/11-style.css" data-type="css"></pre>
           </div>
         </div>
       </section>
