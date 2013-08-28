@@ -37,10 +37,6 @@ function displayQuiz(questions) {
   // Make a Handlebars template from the tag in our HTML
   var template = Handlebars.compile($("#question").html());
 
-  // Scores:
-  var score = 0;
-  var outof = 0;
-
   // For every question...
   for (var i = 0; i < questions.length; i++) {
     // ... load the photos from Flickr
@@ -65,8 +61,12 @@ function displayQuiz(questions) {
     });
   }
 
+  // Scores:
+  var score = 0;
+  var outof = 0;
+
   // When a button (not selected) is clicked...
-  $(document).on("click", "button:not(.selected)", function(e) {
+  $(document).on("click", "button", function(e) {
     // find the clicked button
     var clicked = $(this);
 
@@ -78,9 +78,6 @@ function displayQuiz(questions) {
 
     // Disable other buttons:
     buttons.attr("disabled", "disabled");
-
-    // Make sure the clicked button isn't disabled
-    clicked.attr("disabled", null);
 
     // Select the clicked button
     clicked.addClass("selected");

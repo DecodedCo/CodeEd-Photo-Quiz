@@ -21,3 +21,7 @@ li {
 .selected.incorrect {
   background-color: rgb(217, 83, 79);
 }
+
+.selected[disabled] {
+  opacity: 1;
+}

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/prism-hacktionary.js/prism-hacktionary.css">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
-  <body data-spy="scroll" data-target="#nav">
+  <body data-spy="scroll" data-target="#nav" data-offset="50">
 
     <div class="container">
 
@@ -694,6 +694,56 @@
           <div class="col-sm-6 codeblock" data-example="11">
             <pre class="line-numbers" data-src="assets/examples/11-js.js" data-type="javascript"></pre>
             <pre class="line-numbers" data-src="assets/examples/11-style.css" data-type="css"></pre>
+          </div>
+        </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              Keeping score
+            </p>
+            <p>
+              Now that we've can answer our questions, we need to keep a score of how well the user is doing, and stop them
+              from repeatedly changing their answers.
+            </p>
+            <p>
+              First off, we need to set up some variables for scores. We'll need one for the score, and another for what the
+              score is out of. Set them both to 0 to start off with. Then, we need to disable the buttons for that question
+              when one's been clicked. We can do this be setting the <code>disabled</code> attribute on the buttons.
+            </p>
+            <p>
+              You'll notice that this makes all the buttons fade a little bit. You can stop the selected question from
+              fading by setting <code class="language-css inline">opacity: 1;</code> on things that are selected and disabled.
+            </p>
+            <p>
+              Now we need to increase the scores when people click buttons. We want <code class="langauge-javascript inline">outof</code>
+              to increase every time the user answers a question. <code class="language-javascript inline">score</code>
+              should only increase if the clicked button has class <code>correct</code>.
+            </p>
+            <div class="alert alert-info">
+              <strong>Incrementing numbers:</strong> adding one to a variable is a fairly common task in coding. That's why
+              most languages (including Javascript) make it really easy to do:
+              <code class="language-javascript inline">myVariable++</code> is the same as
+              <code class="language-javascript inline">myVariable = myVariable + 1</code>.
+            </div>
+            <p>
+              Keeping score is useless unless we tell the use what the score is. Add a
+              <code class="language-markup inline">&lt;p&gt;</code> to the top bar. It'll need a few classes:
+              <code class="language-noop"><span class="token attr-value">navbar-text</span></code> so it's nicely centered in
+              the bar, <code class="language-noop"><span class="token attr-value">pull-right</span></code> to keep it to the
+              right of the bar, and <code class="language-noop"><span class="token attr-value">score</span></code> so we can
+              identify it later.
+            </p>
+            <p>
+              Hooking this up to our score in Javascript is really easy: use jQuery to get the element
+              <code class="language-noop"><span class="token selector">.score</span></code>, then set its text to be the
+              score. Now, when you refresh the page, you should have a fully working quiz!
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="12">
+            <pre class="line-numbers" data-src="assets/examples/12-js.js" data-type="javascript"></pre>
+            <pre class="line-numbers" data-src="assets/examples/12-style.css" data-type="css"></pre>
+            <pre class="line-numbers" data-src="assets/examples/12-header.html" data-type="html"></pre>
           </div>
         </div>
       </section>
