@@ -30,6 +30,7 @@
             <li><a href="#structure">Structure</a></li>
             <li><a href="#styles">Styles</a></li>
             <li><a href="#questions">Loading Questions</a></li>
+            <li><a href="#flickr">Flickr API</a></li>
           </ul>
         </div>
       </nav>
@@ -549,6 +550,56 @@
           </div>
           <div class="col-sm-6 codeblock" data-example="08">
             <pre class="line-numbers" data-src="assets/examples/08-js.js" data-type="javascript"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="flickr" class="clearfix">
+        <h2 class="col-sm-12">Using the Flickr API</h2>
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">
+              To get started with the Flickr API, you need an API key.
+            </p>
+            <p>
+              Visit <a target="_blank" href="http://www.flickr.com/services/apps/create/apply/">http://www.flickr.com/services/apps/create/apply/</a>
+              and sign up for a Flickr API key. Once you have your key, <a class="line-link" href="#ex-09-javascript:1">store
+              it in a variable</a> in your JS file.
+            </p>
+            <p>
+              Now, we need to create a function to load photos for a given question. It needs to take one argument,
+              <code class="language-javascript inline">question</code>, and should be called something along the lines of
+              <a href="#ex-09-javascript:3" class="line-link"><code class="language-javascript inline">loadPhotos</code></a>.
+              This function will access Flickr's API for us, to get the photos for our quiz.
+            </p>
+            <p>
+              First, we need to construct the URL for searching Flickr. A quick browse round
+              <a href="http://www.flickr.com/services/api/">the API documentation</a> shows us that
+              <a href="http://www.flickr.com/services/api/flickr.photos.search.html">flickr.photos.search</a> is what we need
+              to use. This method lets us specify a <a href="#ex-09-javascript:7" class="line-link">search term</a>, as well
+              as  <a href="#ex-09-javascript:8" class="line-link">the number of photo's we want, how to sort the results,
+              etc</a>. We also have to provide our <a href="#ex-09-javascript:6" class="line-link">API key</a> so Flickr can
+              keep track of who's using what.
+            </p>
+            <p>
+              Once we've constructed the URL to use, we're going to use jQuery to get the data for us. Just like we've used
+              <code class="language-javascript inline">$.get</code> to get our question data, we can use
+              <a class="line-link" href="#ex-09-javascript:11"><code class="language-javascript inline">$.getJSON</code></a>
+              to get photo data from Flickr. Add a call to <code class="language-javascript inline">$.getJSON</code>, passing
+              in the URL and a function that <code class="language-javascript inline">console.log</code>s the result. Refresh
+              the page and look in the console for your photo data.
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock" data-example="09">
+            <pre class="line-numbers" data-src="assets/examples/09-js.js" data-type="javascript"></pre>
+          </div>
+        </div>
+        <div class="two-up">
+          <div class="col-sm-6">
+            rge
+          </div>
+          <div class="col-sm-6 codeblock" data-example="10">
+            <pre class="line-numbers" data-src="assets/examples/10-js.js" data-type="javascript"></pre>
           </div>
         </div>
       </section>

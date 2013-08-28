@@ -10,7 +10,7 @@ function loadPhotos(question) {
   var url = "http://api.flickr.com/services/rest/?method=flickr.photos.search" +
     "&api_key=" + key +
     "&text=" + question.theme +
-    "&per_page=5&format=json&sort=relevance&jsoncallback=?";
+    "&per_page=3&format=json&sort=relevance&jsoncallback=?";
 
   // Get the data at the URL, and log the data returned
   $.getJSON(url, function(data) {
