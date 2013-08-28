@@ -596,7 +596,59 @@
         </div>
         <div class="two-up">
           <div class="col-sm-6">
-            rge
+            <p class="lead">
+              Getting Flickr photos into the document.
+            </p>
+            <p>
+              Now, we need to do something useful with the data. There's an array of photos in
+              <code class="language-javascript inline">data.photos.photo</code>. We can <a href="#ex-10-javascript:5" class="line-link">
+              pull it out</a> of the response, and then start to use it.
+            </p>
+            <p>
+              If you looked at the photo data in the console, you'll see that it's not in a state where we can easily use it.
+              Our template needs a <code class="lanuage-javascript inline">url</code> and a
+              <code class="lanuage-javascript inline">correct</code> property, but instead we've got things like
+              <code class="lanuage-javascript inline">farm</code>,
+              <code class="lanuage-javascript inline">server</code>, and
+              <code class="lanuage-javascript inline">secret</code>. Luckily, we can use this data to create an object that
+              our template can work with.
+            </p>
+            <p>
+              Javascript has a function for arrays called <code class="language-javascript inline">map</code>. Map is used to
+              transform an array into something new. For example, you might use map to change
+              <code class="language-javascript inline">[1, 2, 3, 4, 5]</code> into
+              <code class="language-javascript inline">[1, 4, 9, 16, 25]</code>. Map takes one argument, which is itself a
+              function. This function takes an argument, which is an item from the array, and returns the modified item. In
+              the example before, this might be written
+              <code class="language-javascript inline">[1, 2, 3, 4, 5].map(function(n) { return n*n; })</code>.
+            </p>
+            <p>
+              We will use <code class="language-javascript inline">map</code> to transform Flickr's data into something our
+              template can use. Write a call to map, with a function that returns an object with url and correct properties.
+              Correct will always be false for these photos, and the url can be obtained with the following expression:
+            </p>
+            <pre class="language-javascript"><code>'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg'</code></pre>
+            <p>
+              Once that's all sorted (you may want to <code class="language-javascript inline">console.log</code> the result)
+              we need to let the rest of our app know we're done. Change your <code class="language-javascript inline">loadPhotos</code>
+              function so it takes on extra argument, <a class="line-link" href="#ex-10-javascript:1">
+              <code class="language-javascript inline">callback</code></a>. This will be a function, so you can call it,
+              passing in your <code class="language-javascript inline">map</code>'d data from flickr and the
+              <code class="language-javascript inline">question</code> object.
+            </p>
+            <p>
+              Finally, we need to modify the loop in <code class="language-javascript inline">displayQuiz</code>. Add a second
+              argument, a function, to the <code class="language-javascript inline">loadQuiz</code> call, so it matches the
+              callback we added above. Move all the template stuff from the loop into this function. Push the correct photo
+              to the list. Now, we have a list of photos, but the correct one is always at the end. We need to shuffle them.
+              Luckily, a quick Google search for &quot;shuffle javascript array&quot; turns up a great
+              <a href="http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array-in-javascript#answers-header">result</a>,
+              which we can just paste into our code and use.
+            </p>
+            <p>
+              Change your data object to use the shuffled array of photos form Flickr and we're done! Refresh the page, and
+              you should see photos from flickr being loaded in along side your questions and answers.
+            </p>
           </div>
           <div class="col-sm-6 codeblock" data-example="10">
             <pre class="line-numbers" data-src="assets/examples/10-js.js" data-type="javascript"></pre>
