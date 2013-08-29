@@ -746,6 +746,49 @@
             <pre class="line-numbers" data-src="assets/examples/12-header.html" data-type="html"></pre>
           </div>
         </div>
+
+        <div class="two-up">
+          <div class="col-sm-6">
+            <p class="lead">Saving user data.</p>
+            <p>
+              The last part of our quiz app is a feature that will let users compare their score to how they scored if they
+              did the quiz previously. We'll start off with a space for this in our HTML. Add an element with a class you can
+              use later on to identify it. Write a message to your user in the element, but where you would normally write
+              their score, write an empty <code class="language-markup inline">&lt;span&gt;</code> tag, with a class you can
+              use to identify it.
+            </p>
+            <p>
+              Next, our JS. First, we need to actually save the score. To do this, we use the localStoarge API. This is a
+              tool that lets us store data on our user's computer to be retrieved later, and it's really easy to use.
+              Modify your <code>click</code> event handler so that every time the score is updated, you call
+              <code class="language-javascript inline">localStorage.setItem()</code>, passing in two arguments: the name of
+              what you're storing, and the value to store.
+            </p>
+            <p>
+              Next, we need to retrieve the data when the user loads the page. Within the
+              <code class="language-javascript inline">displayQuiz</code> function, add code that uses
+              <code class="language-javascript inline">localStorage.getItem</code> to retrieve the scores, passing in one
+              argument, the name that you used to store the data before. Check that the scores aren't <code>null</code> -
+              if they are, it probably means the user hasn't taken the quiz yet. If the scores are defined, set the text
+              of the span from before to the score.
+            </p>
+            <p>
+              Finally, we want to hide the message by default, and only show it to users who have a previous score set.
+              Add a rule to your CSS to hide the message, then add a line next to the one that sets the score text in the
+              message to reveal the message.
+            </p>
+            <p>
+              You can experiment with other stuff with localStorage - can you add a text box for users to write their name,
+              and store and retrieve it for later sessions? What other ways can you think of that you can improve your quiz?
+              Perhaps you can add non-picture questions.
+            </p>
+          </div>
+          <div class="col-sm-6 codeblock">
+            <pre class="line-numbers" data-src="assets/examples/13-body.html" data-type="html"></pre>
+            <pre class="line-numbers" data-src="assets/examples/13-js.js" data-type="javascript"></pre>
+            <pre class="line-numbers" data-src="assets/examples/13-style.css" data-type="css"></pre>
+          </div>
+        </div>
       </section>
     </div>
 
