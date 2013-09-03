@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>CodeEd_Photo Quiz</title>
+
+    <link rel="stylesheet" href="assets/css/reveal.min.css">
+    <link rel="stylesheet" href="assets/css/reveal-theme.css">
+
+    <link rel="stylesheet" href="assets/css/zenburn.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>CodeEd_<span>Photo Quiz</span></h1>
+
+          <aside class="notes">
+            Introduce self, etc.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Interactive web apps with Javascript</h2>
+
+          <aside class="notes">
+            Covered basic HTML. Covered more advance python data vis stuff. Now for interaction. I'll be going over how some
+            of the most important parts work.
+          </aside>
+        </section>
+
+        <section>
+          <iframe src="app/13/" frameborder="0" width="1000" height="900"></iframe>
+        </section>
+
+        <section>
+          <section>
+            <h2>Remixing</h2>
+
+            <aside class="notes">
+              WTF is remixing? Taking something that already exists, and changing it to fit your own needs.
+            </aside>
+          </section>
+
+          <section>
+            <h3>Understand <em>what</em> is happening</h3>
+            <h4>not necessarily <em>how</em></h4>
+          </section>
+
+          <section>
+            <h3>What do I need to change?</h3>
+          </section>
+        </section>
+
+        <section>
+          <h2>Building a photo Quiz App</h2>
+        </section>
+
+        <section>
+          <section>
+            <h3>Basic HTML structure</h3>
+            <iframe src="app/02/" width="1000" height="600"></iframe>
+          </section>
+
+          <section>
+            <h3>Bootstrap: CSS library</h3>
+            <p>
+              <pre><code>
+&lt;link href=&quot;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+              </code></pre>
+            </p>
+            <p>
+              <pre class="fragment"><code style="position: absolute; left: 0; right: 0;">
+&lt;header&gt;
+  &lt;div&gt;
+    &lt;h1&gt;History of Computing&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;Which is the cutest kitten?&lt;/p&gt;
+      &lt;button&gt;&lt;img src=&quot;http://placekitten.com/100/100&quot;&gt;&lt;/button&gt;
+      ...
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+              </code></pre>
+              <pre class="fragment"><code>
+&lt;header class=&quot;navbar navbar-default navbar-fixed-top&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h1 class=&quot;navbar-brand&quot;&gt;History of Computing&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ol class=&quot;list-inline&quot;&gt;
+    &lt;li class=&quot;col-xs-12 col-sm-12 col-md-6 col-lg-4&quot;&gt;
+      &lt;p&gt;Which is the cutest kitten?&lt;/p&gt;
+      &lt;button class=&quot;btn btn-default&quot;&gt;&lt;img src=&quot;http://placekitten.com/100/100&quot;&gt;&lt;/button&gt;
+      ...
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h3>Bootstrap: CSS library</h3>
+            <iframe src="app/05/" width="1000" height="600"></iframe>
+          </section>
+
+          <section>
+            <h3>Storing and retrieving data</h3>
+            <ul>
+              <li>JSON - JavaScript Object Notation</li>
+              <li>Similar to XML - different syntax, web apps</li>
+              <li>Questions stored in JSON</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h3>questions.json</h3>
+            <pre><code>
+[
+  {
+    "question": "Who invented the world wide web?",
+    "answer": "http://upload.wikimedia.org/wikipedia/commons/8/83/Tim_Berners-Lee-Knight-crop.jpg",
+    "theme": "computer scientist"
+  },
+  ...
+]
+            </code></pre>
+            <pre><code>
+$.get("questions.json", function(data) {
+  console.log(data);
+});
+            </code></pre>
+
+            <button onclick="loadQuestions()">Run &rarr;</button>
+          </section>
+
+          <section>
+            <h3>Using the Flickr API</h3>
+            <pre>
+http://api.flickr.com/services/rest/?method=flickr.photos.search
+  &api_key=c554239eaca1fb2f2e89c2da0878e954
+  &text=<input type="text" value="Kittens" id="flickr-search">
+  &per_page=3
+  &format=json
+  &sort=relevance
+            </pre>
+            <button onclick="loadPhotos()">Run &rarr;</button>
+            <div id="flickr-photos"></div>
+          </section>
+
+          <section>
+            <h3>Storing and retrieving <em>user</em> data</h3>
+            <ul>
+              <li>HTML5 localStorage</li>
+              <li>Storing locally is easier</li>
+            </ul>
+            <pre><code>
+localStorage.setItem("myData", "Hello!");
+
+// later...
+
+localStorage.getItem("myData");
+// => "Hello!"
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Remixing!</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Tools</h2>
+          </section>
+
+          <section>
+            <img src="http://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png" class="no-border">
+            <h3>Sublime Text</h3>
+            <h4><a href="http://www.sublimetext.com/">sublimetext.com</a></h4>
+          </section>
+
+          <section>
+            <img src="assets/images/server-thingy.png" class="no-border" width="256" height="256" alt="Sublime Text Logo">
+            <h3>Server Thingy</h3>
+            <h4><a href="http://bit.ly/server-thingy">bit.ly/server-thingy</a></h4>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>The Code</h2>
+          <a href="http://bit.ly/CodeEd-Quiz">bit.ly/CodeEd-Quiz</a>
+        </section>
+
+        <section>
+          <section>
+            <h2>Bootstrap Themes</h2>
+            <h3><a href="http://bootswatch.com">bootswatch.com</a></h3>
+          </section>
+
+          <section>
+            <h3>index.html</h3>
+            <h4>Line 8</h4>
+            <pre><code>
+&lt;link href=&quot;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+            </code></pre>
+            <pre><code>
+&lt;link href=&quot;http://netdna.bootstrapcdn.com/bootswatch/3.0.0/NAME/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Remixing Questions</h2>
+          </section>
+
+          <section>
+            <h3>questions.json</h3>
+            <ul>
+              <li>A list of question objects</li>
+              <li>
+                Each question object has three properties:
+                <ul>
+                  <li>
+                    <code>question</code> - the question you are asking
+                  </li>
+                  <li>
+                    <code>answer</code> - URL to the picture that is the correct answer
+                  </li>
+                  <li>
+                    <code>theme</code> - Flickr search term for wrong answers
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Example</h3>
+            <pre><code style="position: absolute; left: 0; right: 0;">
+[
+  {
+    "question": "Which one is a kitten?",
+    "answer": "http://static.comicvine.com/uploads/original/13/132956/3181555-cute-kitten-kittens-16122946-1280-800.jpg",
+    "theme": "puppies"
+  },
+  {
+    "question": "Which one is a puppy?",
+    "answer": "http://puppywallpapers10.net/wp-content/uploads/images/c9/puppies-1.jpg",
+    "theme": "kittens"
+  }
+]
+            </code></pre>
+            <iframe class="fragment" style="position: relative" src="app/presentation-example" width="1000" height="600" frameborder="0"></iframe>
+          </section>
+        </section>
+
+        <section>
+          <h2>Change the title</h2>
+          <h3>index.html</h3>
+          <h4>Line 6</h4>
+          <pre><code>
+&lt;title&gt;My Quiz App&lt;/title&gt;
+          </code></pre>
+          <h4>Line 14</h4>
+          <pre><code>
+&lt;h1 class=&quot;navbar-brand&quot;&gt;History of Computing Quiz&lt;/h1&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Ta Da!</h2>
+          <ul>
+            <li>You've (hopefully) started to make something relevant to you / your subject</li>
+            <li>You didn't need to know everything - just enough to know what to edit</li>
+            <li>The power of remixing!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="assets/js/head.min.js"></script>
+    <script src="assets/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        width: 1100,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'assets/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'assets/js/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'assets/js/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'assets/js/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+    function loadQuestions() {
+      $.get("app/13/questions.json", function(data) {
+        console.log(data);
+      });
+    }
+
+    function loadPhotos() {
+      var url = "http://api.flickr.com/services/rest/?method=flickr.photos.search" +
+        "&api_key=c554239eaca1fb2f2e89c2da0878e954" +
+        "&text=" + $("#flickr-search").val() +
+        "&per_page=3&format=json&sort=relevance&jsoncallback=?";
+
+      $.getJSON(url, function(data) {
+        console.log(data);
+
+        var photos = data.photos.photo;
+
+        $("#flickr-photos").children().remove();
+
+        photos.forEach(function(photo) {
+          var url = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg';
+
+          var img = $("<img src=\"" + url + "\" class=\"flickr\">");
+
+          $("#flickr-photos").append(img)
+        });
+
+      });
+    }
+
+    loadPhotos()
+    </script>
+  </body>
+</html>
